@@ -31,6 +31,6 @@ desktop.app.hackertyper.openWindow = function openWindow () {
 };
 
 desktop.app.hackertyper.closeWindow = function closeWindow () {
-  $('#hackertyperIframe').attr('src', 'desktop/apps/desktop.hackertyper/vendor/index.html');
+  $('#hackertyperIframe').attr('src', '');
   return true;
 };

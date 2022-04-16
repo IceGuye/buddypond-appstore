@@ -14,10 +14,10 @@ desktop.app.maps.load = function loadmaps (params, next) {
 };
 
 desktop.app.maps.openWindow = function openWindow () {
+  $('#mapsIframe').attr('src', 'desktop/apps/desktop.maps/vendor/index.html');
   return true;
 };
 
 desktop.app.maps.closeWindow = function closeWindow () {
-  $('#mapsIframe').attr('src', 'desktop/apps/desktop.maps/vendor/index.html');
   return true;
 };

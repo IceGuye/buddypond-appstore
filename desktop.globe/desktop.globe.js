@@ -14,10 +14,11 @@ desktop.app.globe.load = function loadglobe (params, next) {
 };
 
 desktop.app.globe.openWindow = function openWindow () {
+  $('#globeIframe').attr('src', 'desktop/apps/desktop.globe/vendor/index.html');
   return true;
 };
 
 desktop.app.globe.closeWindow = function closeWindow () {
-  $('#globeIframe').attr('src', 'desktop/apps/desktop.globe/vendor/index.html');
+  $('#globeIframe').attr('src', '');
   return true;
 };
