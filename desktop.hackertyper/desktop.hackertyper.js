@@ -14,6 +14,19 @@ desktop.app.hackertyper.load = function loadhackertyper (params, next) {
 };
 
 desktop.app.hackertyper.openWindow = function openWindow () {
+  // ensures iframe will focus on body ( required for immediate input on typer )
+  var iframe = document.createElement('iframe');
+  iframe.onload = function() {
+    // use small timeout to ensure DOM has time to render
+    setTimeout(function(){
+      // set focus on the typer input
+      var iframe = $("#hackertyperIframe")[0];
+      iframe.contentWindow.focus();
+    }, 100)
+  };
+  iframe.id = 'hackertyperIframe';
+  iframe.src = 'desktop/apps/desktop.hackertyper/vendor/index.html';
+  $('.hackertyperHolder').append(iframe);
   return true;
 };
 
