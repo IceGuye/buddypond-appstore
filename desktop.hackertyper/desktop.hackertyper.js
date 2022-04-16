@@ -1,5 +1,5 @@
 desktop.app.hackertyper = {};
-desktop.app.hackertyper.label = 'hackertyper';
+desktop.app.hackertyper.label = 'Hacker Typer';
 
 desktop.app.hackertyper.load = function loadhackertyper (params, next) {
   desktop.load.remoteAssets([
