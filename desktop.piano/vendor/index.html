@@ -28,7 +28,7 @@ function KeyIn(e){
 window.onload=function(){
   window.addEventListener("message", (event) => {
     // console.log('eventdata', event.data)
-    synth.send([0x90,event.data[2] , 100])
+    synth.send([event.data[0], event.data[1], event.data[2]])
     //synth.send([0x90, 62, 1, 100])
   }, false);
   Init();
