@@ -9,15 +9,19 @@ desktop.app.piano.load = function loadpiano (params, next) {
     $('#window_piano').css('height', 495);
     $('#window_piano').css('left', 50);
     $('#window_piano').css('top', 50);
+    desktop.on('midi-message', 'send-midi-data-to-piano-app', function(data){
+      let iframe = $('#pianoIframe')[0].contentWindow;
+      iframe.postMessage(data, window.origin);
+    })
     next();
   });
 };
 
 desktop.app.piano.openWindow = function openWindow () {
+  $('#pianoIframe').attr('src', 'desktop/apps/desktop.piano/vendor/index.html');
   return true;
 };
 
 desktop.app.piano.closeWindow = function closeWindow () {
-  $('#pianoIframe').attr('src', 'desktop/apps/desktop.piano/vendor/index.html');
   return true;
 };

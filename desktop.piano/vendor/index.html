@@ -26,6 +26,11 @@ function KeyIn(e){
   synth.send([0x90,e.note[1],e.note[0]?100:0]);
 }
 window.onload=function(){
+  window.addEventListener("message", (event) => {
+    // console.log('eventdata', event.data)
+    synth.send([0x90,event.data[2] , 100])
+    //synth.send([0x90, 62, 1, 100])
+  }, false);
   Init();
 }
 
